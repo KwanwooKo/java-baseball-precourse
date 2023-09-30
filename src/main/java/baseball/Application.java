@@ -9,17 +9,25 @@ public class Application {
         Player player = new Player();
         Game game = new Game(computer.getNumber());
 
+//        computer.printNumber();
+
         while (true) {
             System.out.print("숫자를 입력해주세요 : ");
-            // player.setNumber => error 발생 시키는 코드
+
             player.setNumber(Console.readLine());
             game.setPlayer(player.getNumber());
+            if (game.isNotFinished()) {
+                continue;
+            }
 
-
-
-            game.playGame();
+            // 다시 시작하는 로직 구현해야돼
+            System.out.print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+            if (Console.readLine().equals("2")) {
+                break;
+            }
+            computer.resetComputerNumber();
+//            computer.printNumber();
         }
-
     }
 
 

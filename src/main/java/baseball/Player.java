@@ -44,12 +44,13 @@ public class Player {
         }
     }
 
-    public void initialize() {
+    private void initialize() {
         number.clear();
         initCheckNumber();
     }
 
     public void setNumber(String input) {
+        initialize();
         validateInputRange(input);
         for (int i = 0; i < input.length(); i++) {
             Integer num = input.charAt(i) - '0';

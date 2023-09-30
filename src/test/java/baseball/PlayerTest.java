@@ -12,7 +12,7 @@ class PlayerTest {
 
     @BeforeEach
     public void beforeEach() {
-        player.initialize();
+//        player.initialize();
     }
 
     /**
